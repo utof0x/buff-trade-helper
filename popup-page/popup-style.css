@@ -1,0 +1,35 @@
+body {
+    background: #28334AFF;
+    color: #FBDE44FF;
+}
+
+a {
+    color: #F65058FF;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+}
+
+.main {
+    height: 300px;
+    width: 450px;
+    margin: 10px;
+}
+
+.main-currency {
+    display: flex;
+    height: 24px;
+}
+
+.main-currency-content__input{
+    height: 24px;
+    width: 70px;
+    margin: 0 35px 0 45px;
+    text-align: center;
+    background: #F65058FF;
+    color: #FBDE44FF;
+    border: 1px solid #FBDE44FF;
+}
