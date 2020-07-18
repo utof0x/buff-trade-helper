@@ -19,12 +19,12 @@ input::-webkit-inner-spin-button {
     margin: 10px;
 }
 
-.main-currency {
+.main-data-currency {
     display: flex;
     height: 24px;
 }
 
-.main-currency-content__input{
+.main-data-currency-content__input{
     height: 24px;
     width: 70px;
     margin: 0 35px 0 45px;
