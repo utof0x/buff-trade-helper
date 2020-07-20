@@ -6,7 +6,7 @@
     document.addEventListener('click', () => linkLots(event));
     historyButton.addEventListener('click', () => linkLots(event));
 
-    function linkLots() { // replace item name by item market link
+    function linkLots(event) { // replace item name by item market link
         const target = event.target;
 
         if (target.className != 'market_paging_pagelink' && target.className != 'market_tab_well_tab_contents') return;
