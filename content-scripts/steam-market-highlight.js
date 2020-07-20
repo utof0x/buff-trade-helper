@@ -21,7 +21,6 @@
                     lot.style.background = 'rgba(255, 77, 77, 0.4)';
                 }
             }
-
         }, 1000);
     }
 }

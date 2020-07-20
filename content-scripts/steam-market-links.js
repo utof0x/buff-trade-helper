@@ -1,10 +1,9 @@
 {
-    const steamPage = document.querySelector('.pagecontent')
     const historyPage = document.querySelector('#tabContentsMyMarketHistory');
     const historyButton = document.querySelector('#tabMyMarketHistory');
-    const supportedItems = ['Sticker', 'Case', 'Graffiti', 'Pin', 'Pass', 'Music', 'Patch']
+    const supportedItems = ['Sticker', 'Case', 'Graffiti', 'Pin', 'Pass', 'Music', 'Patch'];
 
-    steamPage.addEventListener('click', () => linkLots(event));
+    document.addEventListener('click', () => linkLots(event));
     historyButton.addEventListener('click', () => linkLots(event));
 
     function linkLots() { // replace item name by item market link
@@ -24,7 +23,6 @@
                     lotItem.innerHTML = `<a href="https://steamcommunity.com/market/listings/730/${lotName}" target="_blank">${lotName}</a>`;
                 }
             }
-
         }, 1000);
     }
 }
