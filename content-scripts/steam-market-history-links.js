@@ -9,7 +9,11 @@
     function linkLots(event) { // replace item name by item market link
         const target = event.target;
 
-        if (target.className != 'market_paging_pagelink' && target.className != 'market_tab_well_tab_contents') return;
+        if (target.className != 'market_paging_pagelink' 
+            && target.className != 'market_tab_well_tab_contents'
+            && target.className != 'pagebtn') {
+            return;
+        }
 
         setTimeout(function() { // delay before historyPage loads
 

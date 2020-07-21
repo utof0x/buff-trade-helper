@@ -8,7 +8,11 @@
     function highlightLots(event) { // set hightlight to lots on history page
         const target = event.target;
         
-        if (target.className != 'market_paging_pagelink' && target.className != 'market_tab_well_tab_contents') return;
+        if (target.className != 'market_paging_pagelink' 
+            && target.className != 'market_tab_well_tab_contents'
+            && target.className != 'pagebtn') {
+            return;
+        }
 
         setTimeout(function() { // delay before historyPage loads
 
