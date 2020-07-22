@@ -41,13 +41,28 @@ input::-webkit-inner-spin-button {
     margin: 0 0 0 292px;
 }
 
+.main-history-quantity {
+    display: flex;
+    height: 24px;
+}
+
+.main-history-quantity-content__input {
+    height: 20px;
+    width: 70px;
+    margin: 0 0 0 122px;
+    text-align: center;
+    background: #F65058FF;
+    color: #FBDE44FF;
+    border: 1px solid #FBDE44FF;
+}
+
 .main-data-currency {
     display: flex;
     height: 24px;
 }
 
-.main-data-currency-content__input{
-    height: 24px;
+.main-data-currency-content__input {
+    height: 20px;
     width: 70px;
     margin: 0 35px 0 45px;
     text-align: center;
