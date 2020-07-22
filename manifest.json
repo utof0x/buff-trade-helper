@@ -11,8 +11,9 @@
         {
             "matches": ["https://steamcommunity.com/market/*"],
             "js": [
-                "content-scripts/steam-market-highlight.js",
-                "content-scripts/steam-market-links.js"
+                "content-scripts/steam-market-history-highlight.js",
+                "content-scripts/steam-market-history-links.js",
+                "content-scripts/steam-market-history-numbering.js"
             ]
         }
     ]
