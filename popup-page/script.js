@@ -3,43 +3,65 @@ const popupDiv = document.body.querySelector('.main');
 document.addEventListener('DOMContentLoaded', () => setInputValues());
 popupDiv.addEventListener('change', () => saveInputValue(event));
 
-function setInputValues() { // set value for evry input on popup page
+function setInputValues() { // set value after popup page loading for every input
     const inputs = document.querySelectorAll('input');
 
     for (let input of inputs) {
         if (input.type == 'number') {
-            input.value = localStorage.getItem(input.className);
+            getValue(input.className).then( (value) => {
+                input.value = value[getName(input.className)];
+            })
+
         } else if (input.type == 'checkbox') {
-            const value = localStorage.getItem(input.className);
-            if (value === 'true') {
-                input.checked = true;
-            } else {
-                input.checked = false;
-            }    
+            getValue(input.className).then( (value) => {
+                input.checked = value[getName(input.className)];
+            })
         }
     }
 }
 
-function saveInputValue(event) { // save new input values to chrome sync storage
+function saveInputValue(event) { // save new input values to chrome local storage
     const target = event.target;
 
     if (target.nodeName != 'INPUT') return;
-    if (target.type == 'number' && !target.value) return;
+    if (target.type == 'number' && !target.value) return; // don't save zero values
 
-    const key = target.className;
     let value;
 
     if (target.type == 'number') {
-        value = target.value;
+        value = Number(target.value); // inputs with type number saves value as 'string' -> convert to 'number'
     } else if (target.type == 'checkbox') {
         value = target.checked;
     }
 
-    localStorage.setItem(key, value);
+    chrome.storage.local.set({[getName(target.className)]: value}, () => {
+        console.log('Value is set to ' + value);
+    });
 }
 
-function getValue(element) { // returns value from chrome sync storage
-    const name = element.className;
+function getName(name) { // convert className to normal name
+    switch (name) {
+        case 'main-history-highlight-content__input':
+            return 'historyPageHighlight';
 
-    localStorage.getItem(name);
+        case 'main-history-links-content__input':
+            return 'historyPageLinks';
+
+        case 'main-history-quantity-content__input':
+            return 'historyPageItemsQuantity';
+
+        case 'main-data-currency-content__input':
+            return 'cnyPrice';
+
+        }
+}
+
+function getValue(name) { // get value from chrome local storage
+    const valueName = getName(name);
+
+    return new Promise(function(resolve, reject) {
+        chrome.storage.local.get([valueName], (value) => {
+            resolve(value);
+        });
+    });
 }
