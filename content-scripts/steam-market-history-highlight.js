@@ -5,14 +5,24 @@
     document.addEventListener('click', () => highlightLots(event));
     historyButton.addEventListener('click', () => highlightLots(event));
 
-    function highlightLots(event) { // set hightlight to lots on history page
+    async function highlightLots(event) { // set hightlight to lots on history page
         const target = event.target;
-        
-        if (target.className != 'market_paging_pagelink' 
-            && target.className != 'market_tab_well_tab_contents'
-            && target.className != 'pagebtn') {
+
+        if (target.className != 'market_paging_pagelink' // if not page numbers &&
+            && target.className != 'market_tab_well_tab_contents' // if not history button && 
+            && target.className != 'pagebtn') { // if not page links -> return
             return;
         }
+
+        const data = new Promise(function(resolve, reject){ // get user settings(historyPageHighlight)
+            chrome.storage.local.get('historyPageHighlight', function(result){
+                resolve(result.historyPageHighlight);
+            })
+        });
+        
+        const historyPageHighlight = await data;
+        
+        if(!historyPageHighlight) return; // if user disabled function -> return
 
         setTimeout(function() { // delay before historyPage loads
 

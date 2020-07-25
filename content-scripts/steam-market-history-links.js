@@ -6,7 +6,7 @@
     document.addEventListener('click', () => linkLots(event));
     historyButton.addEventListener('click', () => linkLots(event));
 
-    function linkLots(event) { // replace item name by item market link
+    async function linkLots(event) { // replace item name by item market link
         const target = event.target;
 
         if (target.className != 'market_paging_pagelink' 
@@ -14,6 +14,16 @@
             && target.className != 'pagebtn') {
             return;
         }
+
+        const data = new Promise(function(resolve, reject){ // get user settings(historyPageLinks)
+            chrome.storage.local.get('historyPageLinks', function(result){
+                resolve(result.historyPageLinks);
+            })
+        });
+        
+        const historyPageLinks = await data;
+        
+        if(!historyPageLinks) return; // if user disabled function -> return
 
         setTimeout(function() { // delay before historyPage loads
 
