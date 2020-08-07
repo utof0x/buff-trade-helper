@@ -19,6 +19,17 @@ input::-webkit-inner-spin-button {
     margin: 10px;
 }
 
+.main-market-percents {
+    display: flex;
+    height: 24px;
+}
+
+.main-market-percents-content__input {
+    height: 20px;
+    width: 20px;
+    margin: 0 0 0 157px;
+}
+
 .main-history-highlight {
     display: flex;
     height: 24px;
