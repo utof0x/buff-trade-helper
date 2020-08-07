@@ -41,6 +41,9 @@ function saveInputValue(event) { // save new input values to chrome local storag
 
 function getName(name) { // convert className to normal name
     switch (name) {
+        case 'main-market-percents-content__input':
+            return 'percentsHelper';
+
         case 'main-history-highlight-content__input':
             return 'historyPageHighlight';
 
