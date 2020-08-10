@@ -44,6 +44,9 @@ function getName(name) { // convert className to normal name
         case 'main-market-percents-content__input':
             return 'percentsHelper';
 
+        case 'main-market-fee-content__input':
+            return 'itemPriceWithoutFee';
+
         case 'main-history-highlight-content__input':
             return 'historyPageHighlight';
 
