@@ -19,76 +19,59 @@ input::-webkit-inner-spin-button {
     margin: 10px;
 }
 
-.main-market-percents {
+.main-tabs {
     display: flex;
-    height: 24px;
 }
 
-.main-market-percents-content__input {
+.main-tabs__item {
+    text-align: center;
+    text-decoration: none;
+    flex-grow: 1;
+    padding: 5px;
+}
+
+.main-tabs__item--active {
+    background-color: #28334AFF;
+    border: 1px solid #F65058FF;
+}
+
+.main-content__item {
+    display: none;
+    padding-top: 7px;
+}
+
+.main-content__item--active {
+    display: block;
+    background-color: #28334AFF;
+    height: 300px;
+}
+
+.main-content-steam,
+.main-content-buff,
+.main-content-global > div {
+    height: 20px;
+}
+
+input[type="checkbox"] {
+    float: right;
     height: 20px;
     width: 20px;
-    margin: 0 0 0 157px;
+    margin-right: 75px;
 }
 
-.main-market-fee {
-    display: flex;
-    height: 24px;
-}
-
-.main-market-fee-content__input {
+input[type="number"] {
+    float: right;
     height: 20px;
-    width: 20px;
-    margin: 0 0 0 165px;
-}
-
-.main-history-highlight {
-    display: flex;
-    height: 24px;
-}
-
-.main-history-highlight-content__input {
-    height: 20px;
-    width: 20px;
-    margin: 0 0 0 255px;
-}
-
-.main-history-links {
-    display: flex;
-    height: 24px;
-}
-
-.main-history-links-content__input {
-    height: 20px;
-    width: 20px;
-    margin: 0 0 0 292px;
-}
-
-.main-history-quantity {
-    display: flex;
-    height: 24px;
-}
-
-.main-history-quantity-content__input {
-    height: 20px;
-    width: 70px;
-    margin: 0 0 0 122px;
+    width: 60px;
+    margin-right: 55px;
     text-align: center;
     background: #F65058FF;
     color: #FBDE44FF;
     border: 1px solid #FBDE44FF;
 }
 
-.main-data-currency {
-    display: flex;
-    height: 24px;
-}
-
-.main-data-currency-content__input {
-    height: 20px;
-    width: 70px;
-    margin: 0 35px 0 45px;
-    text-align: center;
-    background: #F65058FF;
-    color: #FBDE44FF;
-    border: 1px solid #FBDE44FF;
+input[type="number"].main-content-global-id__input {
+    width: 100px;
+    margin-right: 35px;
+    -webkit-text-security: disc;
 }
