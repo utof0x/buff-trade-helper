@@ -12,7 +12,12 @@
             "matches": ["https://steamcommunity.com/market/"],
             "js": [
                 "content-scripts/steam-market-history-highlight.js",
-                "content-scripts/steam-market-history-links.js"
+                "content-scripts/steam-market-history-links.js",
+                "content-scripts/steam-market-history-count.js",
+                "content-scripts/steam-market-lotsPrice.js"
+            ],
+            "css": [
+                "styles/steam-market-styles.css"
             ]
         },
         {
@@ -23,6 +28,62 @@
             "js": [
                 "content-scripts/steam-market-percentsHelper.js",
                 "content-scripts/steam-market-fee.js"
+            ]
+        },
+        {   "matches": [
+                "https://steamcommunity.com/*/inventory/*"
+            ],
+            "js": [
+                "content-scripts/steam-inventory-helper.js"
+            ],
+            "css": [
+                "styles/steam-inventory-styles.css"
+            ]
+        },
+        {   "matches": [
+            "https://steamcommunity.com/*/tradeoffers/"
+        ],
+        "js": [
+            "content-scripts/steam-offers-helper.js"
+        ],
+        "css": [
+            "styles/steam-offers-styles.css"
+        ]
+    },
+        {
+            "matches": [
+                "https://buff.163.com/*"
+            ],
+            "js": [
+                "content-scripts/buff-darkTheme.js"
+            ],
+            "css": ["styles/buff-styles.css"]
+        },
+        {
+            "matches": [
+                "https://buff.163.com/market/?*",
+                "https://buff.163.com/market/goods*"
+            ],
+            "js": [
+                "content-scripts/buff-market-percentsHelper.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://buff.163.com/market/sell_order/*"
+            ],
+            "js": [
+                "content-scripts/buff-inventory-sellHelper.js",
+                "content-scripts/buff-inspectItems.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://buff.163.com/market/steam_inventory?*"
+            ],
+            "js": [
+                "content-scripts/buff-inventory-sellHelper.js",
+                "content-scripts/buff-inspectItems.js"
             ]
         }
     ]
