@@ -7,71 +7,82 @@
 </head>
 <body>
     <div class="main">
-        <div class="main-market">
-            <div class="main-market-percents">
-                <div class="main-market-percents-title">
-                    <span class="main-market-percents-title__text">
-                        Add percents helper on page?
-                    </span>
-                </div>
-                <div class="main-market-percents-content">
-                    <input class="main-market-percents-content__input" type="checkbox">
-                </div>
-            </div>
-            <div class="main-market-fee">
-                <div class="main-market-fee-title">
-                    <span class="main-market-fee-title__text">
-                        Show item price without fee?
-                    </span>
-                </div>
-                <div class="main-market-fee-content">
-                    <input class="main-market-fee-content__input" type="checkbox">
-                </div>
-            </div>
+        <div class="main-tabs">
+            <a href="#tab-1" class="main-tabs__item">Steam</a>
+            <a href="#tab-2" class="main-tabs__item">Buff</a>
+            <a href="#tab-3" class="main-tabs__item">Global</a>
         </div>
-        <div class="main-history">
-            <div class="main-history-highlight">
-                <div class="main-history-highlight-title">
-                    <span class="main-history-highlight-title__text">
-                        Highlight items?
-                    </span>
-                </div>
-                <div class="main-history-highlight-content">
-                    <input class="main-history-highlight-content__input" type="checkbox">
+        <div class="main-content">
+            <!-- Steam settings tab -->
+
+            <div id="tab-1" class="main-content__item">
+                <div class="main-content-steam">
+                    <div class="main-content-steam-helper">
+                        <span>Add percents helper on page?</span>
+                        <input class="main-content-steam-helper__input" type="checkbox">
+                    </div>
+                    <div class="main-content-steam-fee">
+                        <span>Show item price without fee?</span>
+                        <input class="main-content-steam-fee__input" type="checkbox">
+                    </div>
+                    <div class="main-content-steam-offers">
+                        <span>Add auto accept/reject offers buttons?</span>
+                        <input class="main-content-steam-offers__input" type="checkbox">
+                    </div>
+                    <div class="main-content-steam-inventory">
+                        <span>Enable steam inventory helper?</span>
+                        <input class="main-content-steam-inventory__input" type="checkbox">
+                    </div>
+                    <div class="main-content-steam-highlight">
+                        <span>Highlight items?</span>
+                        <input class="main-content-steam-highlight__input" type="checkbox">
+                    </div>
+                    <div class="main-content-steam-links">
+                        <span>Add link on item?</span>
+                        <input class="main-content-steam-links__input" type="checkbox">
+                    </div>
+                    <div class="main-content-steam-quantity">
+                        <span>Enter quantity of items on page</span>
+                        <input class="main-content-steam-quantity__input" type="number">
+                    </div>
                 </div>
             </div>
-            <div class="main-history-links">
-                <div class="main-history-links-title">
-                    <span class="main-history-links-title__text">
-                        Link items?
-                    </span>
-                </div>
-                <div class="main-history-links-content">
-                    <input class="main-history-links-content__input" type="checkbox">
+
+            <!-- Buff settings tab -->
+
+            <div id="tab-2" class="main-content__item">
+                <div class="main-content-buff">
+                    <div class="main-content-buff-helper">
+                        <span>Add percents helper on page?</span>
+                        <input class="main-content-buff-helper__input" type="checkbox">
+                    </div>
+                    <div class="main-content-buff-sell">
+                        <span>Add sell helper?</span>
+                        <input class="main-content-buff-sell__input" type="checkbox">
+                    </div>
+                    <div class="main-content-buff-theme">
+                        <span>Enable steam dark theme?</span>
+                        <input class="main-content-buff-theme__input" type="checkbox">
+                    </div>
+                    <div class="main-content-buff-inspect">
+                        <span>Add inspect all button?</span>
+                        <input class="main-content-buff-inspect__input" type="checkbox">
+                    </div>
                 </div>
             </div>
-            <div class="main-history-quantity">
-                <div class="main-history-quantity-title">
-                    <span class="main-history-quantity-title__text">
-                        Enter quantity of items on page
-                    </span>
-                </div>
-                <div class="main-history-quantity-content">
-                    <input class="main-history-quantity-content__input" type="number">
-                </div>
-            </div>
-        </div>
-        <div class="main-inventory"></div>
-        <div class="main-data">
-            <div class="main-data-currency">
-                <div class="main-data-currency-title">
-                    <span class="main-data-currency-title__text">
-                        Enter CNY to UAH price (u can find it
-                            <a class="main-data-currency-title__link" href="https://freecurrencyrates.com/ru/convert-CNY-UAH" target="_blank">here</a>)
-                    </span>
-                </div>
-                <div class="main-data-currency-content">
-                    <input class="main-data-currency-content__input" type="number">
+
+            <!-- Global settings tab -->
+
+            <div id="tab-3" class="main-content__item">
+                <div class="main-content-global">
+                    <div class="main-content-global-currency">
+                        <span>Enter CNY to UAH price (<a href="https://freecurrencyrates.com/ru/convert-CNY-UAH" target="_blank">here</a>)</span>
+                        <input class="main-content-global-currency__input" type="number">
+                    </div>
+                    <div class="main-content-global-id">
+                        <span>Enter steamID64 (<a href="https://steamidfinder.com/" target="_blank">here</a>)</span>
+                        <input class="main-content-global-id__input" type="number">
+                    </div>
                 </div>
             </div>
         </div>
