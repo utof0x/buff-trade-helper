@@ -1,0 +1,52 @@
+/* steam inventory helper styles */
+/* custom elements styles */
+
+.sell-helper {
+    display: flex;
+    height: 40px;
+    margin-left: 6px;
+    margin-right: 23px;
+    background-color: rgba( 0, 0, 0, 0.3);
+}
+
+button:focus {
+    outline: 0;
+}
+
+button:focus {
+    border: 1px solid yellow;
+}
+
+.sell-helper > button {
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    border: none;
+    border-radius: 1px;
+    color: #d2d2c8;
+}
+
+.select-items__button,
+.select-all-items__button {
+    background: #009900;
+    margin: 5px 0 0 10px;
+}
+
+.cancel__button {
+    background: #ff4d4d;
+    margin: 5px 0 0 20px;
+}
+
+.sell-items__button {
+    background: #ff944d;
+    margin: 5px 0 0 430px;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected {
+    border: 1px dashed #66ff33 !important;
+    /* background: #ccffcc !important; */
+}

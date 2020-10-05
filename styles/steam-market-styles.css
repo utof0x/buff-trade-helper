@@ -1,0 +1,41 @@
+/* listings styles */
+
+.total-listings-price {
+    height: 43px;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.listings-price-title {
+    margin: 14.5px 0 0 5px;
+    font-size: 14px;
+}
+
+.listings-price-content {
+    margin: 7.5px 0 0 502px;
+}
+
+.listings-price-content > div {
+    color: yellow;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* orders styles */
+
+.total-orders-price {
+    height: 29px;
+    line-height: 29px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.title-text {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.price-text {
+    margin-left: 465px;
+    font-size: 14px;
+    color: yellow;
+}

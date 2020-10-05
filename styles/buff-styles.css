@@ -1,0 +1,252 @@
+/* sell helper styles */
+
+.popup_charge {
+    margin-top: -700px !important;
+}
+
+.list_tb-body {
+    max-height: 1200px !important;;
+    height: 1200px !important;
+}
+
+.same-price-input {
+    height: 22px;
+    width: 82px;
+    position: absolute;
+    margin: 10px 0 0 0;
+    background: #1b2838;
+    text-align: center;
+}
+
+.same-price-button {
+    height: 30px;
+    width: 110px;
+    position: absolute;
+    margin: 10px 0 0 93px;
+    background: #1b2838;
+}
+
+.cover {
+    background: none !important;
+    opacity: 1 !important;
+}
+
+.big-items-tab {
+    height: 1198px;
+    width: 498px;
+    margin: 110px 0 0 50px;
+    position: absolute;
+    overflow: auto;
+    background: #16202d;
+    border: 1px solid #d2d2c8;
+}
+
+.item-block {
+    height: 240px;
+    width: 498px;
+    margin-bottom: 10px;
+    background: #1b2838;
+    border-top: 1px solid #d2d2c8;
+    border-bottom: 1px solid #d2d2c8;
+    position: relative;
+}
+
+.item-block:last-child {
+    margin-bottom: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.item-block .img-cont2 {
+    border: none;
+}
+
+.item-image {
+    display: inline-block;
+    position: absolute;
+    margin-top: 1px;
+}
+
+.item-image .img-cont2.item-detail-img, 
+.item-image .img-cont2.item-detail-img img {
+    height: 198px;
+    width: 198px;
+}
+
+.item-image .img-cont2.item-detail-img {
+    position: static;
+    border-right: 1px solid #d2d2c8 !important;
+    border-bottom: 1px solid #d2d2c8 !important;
+}
+
+.item-stickers {
+    display: flex;
+    position: absolute;
+    margin-top: 200px;
+    width: 199px;
+    border-right: 1px solid #d2d2c8 !important;
+}
+
+.item-stickers .stickers {
+    border-right: 1px solid #d2d2c8;
+    height: 39px;
+    width: 50px;
+}
+
+.item-stickers .stickers img {
+    height: 39px;
+    width: 48px;
+}
+
+.item-name {
+    position: absolute;
+    margin: 5px 0 0 205px;
+    text-align: center;
+    font-size: 16px;
+    height: 20px;
+    white-space: nowrap;
+    color: #53a567ff !important;
+}
+
+.item-float{
+    position: absolute;
+    height: 20px;
+    margin: 30px 0 0 205px;
+    font-size: 16px;
+}
+
+.item-current-sale-price {
+    position: absolute;
+    height: 20px;
+    width: 150px;
+    margin: 55px 0 0 205px;
+    font-size: 16px;
+}
+
+.item-lowest-market-price {
+    position: absolute;
+    height: 20px;
+    width: 150px;
+    margin: 80px 0 0 205px;
+    font-size: 16px;
+}
+
+.item-price-input {
+    position: absolute;
+    height: 30px;
+    width: 150px;
+    margin: 162px 0 0 275px;
+    background-color: rgba( 0, 0, 0, 0.2 );
+    font-size: 16px;
+    text-align: center;
+}
+
+.set-item-price-button {
+    position: absolute;
+    height: 38px;
+    width: 100px;
+    margin: 160px 0 0 338px;
+    background-color: rgba( 0, 0, 0, 0.2 );
+    font-size: 16px;
+}
+
+.item-qantity-tab {
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 20px;
+    border-right: 1px solid #d2d2c8;
+    border-bottom: 1px solid #d2d2c8;
+}
+
+/* buff percents helper styles */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {  /* delete right arrows from inputs */ 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.steam-price-input::-webkit-input-placeholder,
+.buff-price-input::-webkit-input-placeholder {  /* change pleceholder text proporties */
+    font-size: 28px;
+    text-align: center;
+}
+
+.main-content {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    width: 800px;
+    position: absolute; 
+    margin: 350px 0 0 0;
+}
+
+.steam-price-input, .buff-price-input {
+    height: 58px;
+    width: 190px;
+    background: #16202d;
+    border: 1px solid black;
+    font-size: 30px;
+    text-align: center;
+}
+
+.steam-buff-percents-output, 
+.buff-steam-percents-output {
+    height: 62px; 
+    width: 190px;
+    line-height: 62px;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgba( 0, 0, 0, 0.2 ); 
+    border: 1px solid #000;
+}
+
+.get-price-content {
+    height: 60px;
+    width: 700px;
+    position: absolute;
+    display: flex;
+    margin: 430px 0 0 100px;
+}
+
+.get-price-content button {
+    height: 62px;
+    width: 190px;
+    font-size: 20px;
+    background-color: rgba( 0, 0, 0, 0.2 ); 
+    border: 1px solid #000;
+}
+
+.get-price-content div {
+    height: 60px; 
+    width: 200px;
+    line-height: 60px;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 10px;
+    background-color: rgba( 0, 0, 0, 0.2 ); 
+    border: 1px solid #000;
+}
+
+.get-price-content div:first-of-type {
+    margin-left: 30px;
+}
+
+/* inspect button styles */
+
+.inspect-all-button {
+    height: 38px;
+    width: 120px;
+    margin-right: 12px;
+    background: #1b2838;
+    border: 1px solid #1b2838;
+    color: #FFF !important;
+    border-radius: 2px;
+}
+
+/*  */

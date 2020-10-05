@@ -1,0 +1,38 @@
+/* fix incoming offers tab width */
+
+.profile_rightcol {
+    width: 240px !important;
+}
+
+/* button styles */
+
+.accept-all-button,
+.reject-all-button {
+    height: 40px;
+    width: 240px;
+    margin: 10px 0 0 0;
+    color: #ebebeb;
+    border: none;
+    border-radius: 5px;
+}
+
+.accept-button,
+.reject-button {
+    float: right;
+    height: 32px;
+    width: 80px;
+    margin: -8px 0 0 5px;
+    color: #ebebeb;
+    border: none;
+    border-radius: 2px;
+}
+
+.accept-button,
+.accept-all-button {
+    background-color: #006B38FF;
+}
+
+.reject-button,
+.reject-all-button {
+    background-color: #990011FF;
+}
