@@ -37,6 +37,6 @@
                     lotItem.innerHTML = `<a href="https://steamcommunity.com/market/listings/730/${lotName}" target="_blank">${lotName}</a>`;
                 }
             }
-        }, 1000);
+        }, 2000);
     }
 }
