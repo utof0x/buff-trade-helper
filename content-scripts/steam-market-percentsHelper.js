@@ -7,7 +7,7 @@
         });
 
         const userSettings = await data; 
-        const percentsHelper = userSettings.percentsHelper;
+        const percentsHelper = userSettings.steamPercentsHelper;
         const cnyPrice = userSettings.cnyPrice;
 
         if (!percentsHelper) return;  // if user disable this function -> return
