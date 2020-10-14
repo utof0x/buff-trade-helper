@@ -1,4 +1,10 @@
 {
+    try {
+        createPercentsHelper();  // call main function
+    } catch (error) {
+        console.error(error);
+    }
+
     async function createPercentsHelper() {
         const data = new Promise(function(resolve, reject){ // get user settings(all)
             chrome.storage.local.get(null, function(result){
@@ -14,36 +20,100 @@
 
         const currentUrl = document.location.href;
         const percentsHelperTab = document.createElement('div');
+        percentsHelperTab.className = 'main-content';
         percentsHelperTab.innerHTML = `
-            <div class="main-content">
-                <input class="steam-price-input" type="number" placeholder="steam price">
-                <input class="buff-price-input" type="number" placeholder="buff price">
-                <span class="steam-buff-percents-output"></span>
-                <span class="buff-steam-percents-output"></span>
-            </div>
+            <input class="steam-price-input" type="number" placeholder="steam price">
+            <input class="buff-price-input" type="number" placeholder="buff price">
+            <span class="steam-buff-percents-output"></span>
+            <span class="buff-steam-percents-output"></span>
         `;
-
-        document.querySelector('.market-list').insertAdjacentElement('afterbegin', percentsHelperTab);  // append percents tab
 
         percentsHelperTab.querySelector('.steam-price-input').addEventListener('input', () => { changePercents(cnyPrice); });
         percentsHelperTab.querySelector('.buff-price-input').addEventListener('input', () => { changePercents(cnyPrice); });
 
+        document.querySelector('.market-list').insertAdjacentElement('afterbegin', percentsHelperTab);  // append percents tab
+
+        const roundedPercentsTab = document.createElement('div');
+        roundedPercentsTab.className = 'get-price-content';
+
+        document.querySelector('.market-list').insertAdjacentElement('afterbegin', roundedPercentsTab);
+
+        const openAllLinksOnSellPageButton = document.createElement('button');
+        openAllLinksOnSellPageButton.className = 'open-all__button';
+        openAllLinksOnSellPageButton.innerHTML = 'Open all on sell page';
+        openAllLinksOnSellPageButton.addEventListener('click', openAllListingsOnSellPage);
+
+        const openAllLinksOnPurchasePageButton = document.createElement('button');
+        openAllLinksOnPurchasePageButton.className = 'open-all__button';
+        openAllLinksOnPurchasePageButton.innerHTML = 'Open all on purchase page';
+        openAllLinksOnPurchasePageButton.addEventListener('click', openAllListingsOnPurchasePage);
+
+        // add puttons to open all listings from current page
+        roundedPercentsTab.insertAdjacentElement('beforeend', openAllLinksOnSellPageButton);
+        roundedPercentsTab.insertAdjacentElement('beforeend', openAllLinksOnPurchasePageButton);
+
         if (!currentUrl.includes('https://buff.163.com/market/?')) {  // if not market main page
-            roundedPercentsTab = document.createElement('div');
-            roundedPercentsTab.innerHTML = `
-                <div class="get-price-content">
-                    <button class="get-price-content__button">Rounded percents</button>
-                    <div class="rounded-steam-buff-percents-output"></div>
-                    <div class="rounded-buff-steam-percents-output"></div>
-                </div>
-            `;
+            const priceContentButton = document.createElement('button');
+            priceContentButton.className = 'get-price-content__button';
+            priceContentButton.innerHTML = 'Rounded percents';
 
-            document.querySelector('.market-list').insertAdjacentElement('afterbegin', roundedPercentsTab);
-            document.querySelector('.get-price-content__button').addEventListener('click', calculateRoundedPercents);
+            const steamToBuffPercentsTab = document.createElement('div');
+            steamToBuffPercentsTab.className = 'rounded-steam-buff-percents-output';
+            const buffToSteamPercentsTab = document.createElement('div');
+            buffToSteamPercentsTab.className = 'rounded-buff-steam-percents-output';
+            
+            // remove previously created buttons and increase tab width up to 600px
+            roundedPercentsTab.removeChild(openAllLinksOnSellPageButton);
+            roundedPercentsTab.removeChild(openAllLinksOnPurchasePageButton);
+            roundedPercentsTab.style.width = '600px';
 
-            setTimeout(function() {  // generate click on button to calculate percents
-                document.querySelector('.get-price-content__button').click();
-            }, 1000);
+            // add button to calc rounded percents and fields to display percents
+            roundedPercentsTab.insertAdjacentElement('beforeend', priceContentButton);
+            roundedPercentsTab.insertAdjacentElement('beforeend', steamToBuffPercentsTab);
+            roundedPercentsTab.insertAdjacentElement('beforeend', buffToSteamPercentsTab);
+
+            priceContentButton.addEventListener('click', calculateRoundedPercents);
+            document.addEventListener('readystatechange', calculateRoundedPercentsAfterPageLoads);
+        }
+    }
+
+    function calculateRoundedPercentsAfterPageLoads() { // after page full loads -> calc rounded percents
+        if (document.readyState === 'complete') {
+            const timer = setInterval(() => {
+                if (document.querySelector('.detail-tab-cont').querySelectorAll('strong.f_Strong')[0]) {
+                    calculateRoundedPercents();
+                    clearInterval(timer);
+                }
+            }, 200);
+        }
+    }
+
+    function openAllListingsOnSellPage() {  // selects all listings on page and opens their sell tabs
+        const listingsTab = document.querySelector('.list_card');
+        const listings = listingsTab.querySelectorAll('li');
+
+        for (let listing of listings) {
+            setTimeout( () => {  // after delay in 0.1sec
+                const listingName = listing.querySelector('h3');
+                const listingLink = listingName.querySelector('a');
+                listingLink.target = '_blank';  // set target to open link in new tab
+                listingLink.click();  // generate click to open
+            }, 100);
+        }
+    }
+
+    function openAllListingsOnPurchasePage() {  // selects all listings on page and opens their purchase tabs
+        const listingsTab = document.querySelector('.list_card');
+        const listings = listingsTab.querySelectorAll('li');
+
+        for (let listing of listings) {
+            setTimeout( () => {
+                const listingName = listing.querySelector('h3');
+                const listingLink = listingName.querySelector('a');
+                listingLink.href = listingLink.href.replace('selling', 'buying');  // set href to open purchase tab
+                listingLink.target = '_blank';
+                listingLink.click();
+            }, 200);
         }
     }
 
@@ -84,5 +154,4 @@
         document.querySelector('.steam-buff-percents-output').innerHTML = depositePercents.toFixed(2);
         document.querySelector('.buff-steam-percents-output').innerHTML = outputPercents.toFixed(2);
     }
-    createPercentsHelper();  // call main function
 }
