@@ -208,15 +208,16 @@ input[type=number]::-webkit-outer-spin-button {  /* delete right arrows from inp
 
 .get-price-content {
     height: 60px;
-    width: 700px;
+    width: 400px;
     position: absolute;
     display: flex;
-    margin: 430px 0 0 100px;
+    justify-content: space-between;
+    margin-top: 430px;
 }
 
 .get-price-content button {
     height: 62px;
-    width: 190px;
+    width: 195px;
     font-size: 20px;
     background-color: rgba( 0, 0, 0, 0.2 ); 
     border: 1px solid #000;
@@ -224,17 +225,12 @@ input[type=number]::-webkit-outer-spin-button {  /* delete right arrows from inp
 
 .get-price-content div {
     height: 60px; 
-    width: 200px;
+    width: 195px;
     line-height: 60px;
     font-size: 30px;
     text-align: center;
-    margin-left: 10px;
     background-color: rgba( 0, 0, 0, 0.2 ); 
     border: 1px solid #000;
-}
-
-.get-price-content div:first-of-type {
-    margin-left: 30px;
 }
 
 /* inspect button styles */
