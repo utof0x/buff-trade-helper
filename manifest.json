@@ -31,16 +31,6 @@
             ]
         },
         {   "matches": [
-                "https://steamcommunity.com/*/inventory/*"
-            ],
-            "js": [
-                "content-scripts/steam-inventory-helper.js"
-            ],
-            "css": [
-                "styles/steam-inventory-styles.css"
-            ]
-        },
-        {   "matches": [
             "https://steamcommunity.com/*/tradeoffers/"
         ],
         "js": [
