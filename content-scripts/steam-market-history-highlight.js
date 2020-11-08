@@ -29,10 +29,23 @@
             const lots = historyPage.querySelectorAll('.market_listing_row');
 
             for (let lot of lots) { // if buy lot('+') -> green highlight, if sold lot('-') -> red highlight  
-                if (lot.querySelector('.market_listing_left_cell').innerHTML.includes('+')) {
-                    lot.style.backgroundColor = 'rgba(50, 205, 50, 0.3)';
-                } else if (lot.querySelector('.market_listing_left_cell ').innerHTML.includes('-')) {
-                    lot.style.background = 'rgba(255, 77, 77, 0.4)';
+                const actionTab = lot.querySelector('.market_listing_whoactedwith');
+                if (actionTab.innerHTML.includes('Buyer:')) {  // -> red highlight  
+
+                    lot.style.backgroundColor = 'rgba(255, 77, 77, 0.4)';
+
+                } else if(actionTab.innerHTML.includes('Seller:')) {  // -> green highlight  
+
+                    lot.style.background = 'rgba(50, 205, 50, 0.3)';
+
+                } else if(actionTab.innerHTML.includes('Listing canceled')) {  // -> yellow highlight  
+
+                    lot.style.background = 'rgba(255, 255, 0, 0.25)';
+
+                } else if(actionTab.innerHTML.includes('Listing created')) {  // -> blue highlight  
+
+                    lot.style.background = 'rgba(0, 0, 255, 0.2)';
+
                 }
             }
         }, 2000);
