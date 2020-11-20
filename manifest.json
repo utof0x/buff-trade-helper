@@ -34,6 +34,9 @@
             "js": [
                 "content-scripts/steam-market-percentsHelper.js",
                 "content-scripts/steam-market-fee.js"
+            ], 
+            "css": [
+                "./styles/steam-global.css"
             ]
         },
         {   "matches": [

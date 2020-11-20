@@ -1,0 +1,11 @@
+#market_buyorder_info_show_details {
+  display: none;
+}
+
+#market_buyorder_info_details_tablecontainer {
+  margin-top: 30px;
+}
+
+.market_commodity_orders_block {
+  width: 435px !important;
+}
