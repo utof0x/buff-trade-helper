@@ -4,6 +4,12 @@
     "version": "1.0",
     "description": "This extension help you use site buff.163.com",
     "permissions": ["storage"],
+    "icons": {
+        "16": "./icons/extension_icon16x16.png",
+        "32": "./icons/extension_icon32x32.png",
+        "48": "./icons/extension_icon48x48.png",
+        "128": "./icons/extension_icon128x128.png"
+    },
     "browser_action": {
         "default_popup": "popup-page/popup.html"
     },
